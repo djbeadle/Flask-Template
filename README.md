@@ -1,12 +1,42 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+Development began in April, 2019 at the request of Mitesh Shah and Candice Zhang to add additional features to the original Customer Admin app.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+The original app was two thousand lines of gobbldygook, thus justifying this complete rewrite.
+
+# Setting up the development environment
+Prerequisites Python3 and Pip [(install guide)](https://docs.python-guide.org/dev/virtualenvs/#make-sure-you-ve-got-python-pip), virtualenv [(install guide)](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv), and git [(another install guide)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+1. Clone the repository
+
+2. Navigate to the repository's top level (the level with 'README.md', 'requirements.txt', the folder 'app', etc)
+
+3. Create a virtual environment with python 3 and enter it [(guide here)](https://docs.python-guide.org/dev/virtualenvs/#basic-usage)
+
+4. Install the required python packages from requirements.txt [(guide here)](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
+
+5. Create a copy of 'config-example.py' in the same directory called 'config.py' and fill it in with your secrets. 'config.py' already has an entry in '.gitignore'
+
+6. Set the Flask environment variables
+
+Unix:
+
+~~~bash
+export FLASK_ENV=development
+export FLASK_APP=myapp
+~~~
+
+Windows:
+
+~~~cmd
+set FLASK_ENV=development
+set FLASK_APP=myapp
+~~~
+
+7. Run it!
+
+~~~bash
+flask run
+~~~
 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
