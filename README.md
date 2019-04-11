@@ -1,8 +1,3 @@
-# Introduction 
-Development began in April, 2019 at the request of Mitesh Shah and Candice Zhang to add additional features to the original Customer Admin app.
-
-The original app was two thousand lines of gobbldygook, thus justifying this complete rewrite.
-
 # Setting up the development environment
 Prerequisites Python3 and Pip [(install guide)](https://docs.python-guide.org/dev/virtualenvs/#make-sure-you-ve-got-python-pip), virtualenv [(install guide)](https://docs.python-guide.org/dev/virtualenvs/#lower-level-virtualenv), and git [(another install guide)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
