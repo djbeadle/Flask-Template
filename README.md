@@ -20,11 +20,18 @@ export FLASK_ENV=development
 export FLASK_APP=myapp
 ~~~
 
-Windows:
+Windows CMD:
 
-~~~cmd
+~~~bash
 set FLASK_ENV=development
 set FLASK_APP=myapp
+~~~
+
+Windows PowerShell:
+
+~~~bash
+$env:FLASK_ENV='development'
+$env:FLASK_APP='application.py'
 ~~~
 
 7. Run it!
