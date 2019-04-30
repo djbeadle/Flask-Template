@@ -31,7 +31,7 @@ Windows PowerShell:
 
 ~~~bash
 $env:FLASK_ENV='development'
-$env:FLASK_APP='application.py'
+$env:FLASK_APP='myapp.py'
 ~~~
 
 7. Run it!
