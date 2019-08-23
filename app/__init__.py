@@ -1,9 +1,26 @@
 from flask import Flask, Blueprint
 from config import config, DevelopmentConfig, ProductionConfig
+import sqlite3
 
 def create_app(config_name):
     """Application factory that returns a fully formed instance of the app
 
+    The application context doesn't exist when this file is running, so 
+    instead of being able to access values defined in the file config.py 
+    the normal way as follows which uses the 'current_app' proxy:
+    
+    ~~~python
+    from flask import current_app
+    current_app.config['KEY_NAME']
+    ~~~
+    
+    We have to manually access the config file as follows:
+
+    ~~~python
+    from config import config
+    config[config_name].KEY_NAME
+    ~~~
+    
     Args:
       config_name (str): The name of the configuration to use
     
