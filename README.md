@@ -40,6 +40,46 @@ $env:FLASK_APP='myapp.py'
 flask run
 ~~~
 
+# How do I...
+
+## Run code on application startup?
+
+Put it in **/app/__init__.py**
+
+## Run this under Apache?
+
+1. Install Apache
+
+2. Install the appropriate version of [mod_wsgi](https://modwsgi.readthedocs.io/en/develop/) for your distribution and version of Python.
+
+3. Download this project and set it up based on the instructions in the previous section, [Setting up the development environment](Setting-up-the-development-environment)
+
+4. Add an Apache virtual host with the following details
+
+  ~~~bash
+  WSGIDaemonProcess fugue python-home=[PATH_TO_VIRTUALENV] home=[PATH_TO_PROJECT_HOME]
+  WSGIApplicationGroup %{GLOBAL}
+  WSGIScriptAlias /[PATH] [PATH_TO_CONF_WSGI]
+  <Directory [PATH_TO_PROJECT_HOME]>
+      WSGIProcessGroup [PROCESS_GROUP_NAME]
+      Options FollowSymLinks
+      AllowOverride None
+      Require all granted
+  </Directory>
+  ~~~
+  
+  Example variable values are as follows:
+  
+  - PATH_TO_VIRTUALENV: **"/home/djbeadle/flask-template/venv/"**
+  - PATH_TO_PROJECT_HOME: **"/home/djbeadle/flask-template"**
+  - PATH: **"flask_template"**
+  - PATH_TO_CONF_WSGI: **"/home/djbeadle/Daniel-fugue-take-home/conf.wsgi"**
+  - PROCESS_GROUP_NAME: **"flask_template"**
+
+5. Restart Apache and see if it works!
+
+5. Tweak your project's home directory permissions if Apache can't access it. 
+
 # Build and Test
 
 Tests can be run from the root directory with the command
