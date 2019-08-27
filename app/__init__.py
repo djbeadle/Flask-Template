@@ -1,6 +1,13 @@
 from flask import Flask, Blueprint
 from config import config, DevelopmentConfig, ProductionConfig
 import sqlite3
+"""
+If you have another file in this directory and want to import it you must
+prefix the import statement with the directory 'app'.
+
+ex:
+from app.db_operations import create_db
+"""
 
 def create_app(config_name):
     """Application factory that returns a fully formed instance of the app
