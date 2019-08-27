@@ -40,13 +40,13 @@ $env:FLASK_APP='myapp.py'
 flask run
 ~~~
 
-# How do I...
+# Tips & Tricks & Notes
 
-## Run code on application startup?
+## How do I run code on application startup?
 
 Put it in **/app/__init__.py**
 
-## Run this under Apache?
+## How do I run this under Apache?
 
 1. Install Apache
 
