@@ -45,12 +45,16 @@ def create_app(config_name):
     print('this is the config name: {}'.format(config_name))
     
     # Select the desired config object from FLASK_ENV environment variable
-    app.config.from_object(config[config_name])
     try:
+      app.config.from_object(config[config_name])
       config[config_name].init_app(app)
-    except:
-      print('An error occurred initalizing the app. Be sure to set the environment \
-        variables FLASK_ENV=(development|production) and FLASK_APP=application.py')
+    except Exception as e:
+      print('')
+      print('An error occurred initalizing the app. Be sure to set the environment')
+      print('variables FLASK_ENV=(development|production) and FLASK_APP=application.py')
+      print('')
+      raise e
+    
 
     from app.landing import landing_bp
     app.register_blueprint(landing_bp)
