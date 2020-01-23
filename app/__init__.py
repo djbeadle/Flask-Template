@@ -1,6 +1,14 @@
 from flask import Flask, Blueprint
-from config import config, DevelopmentConfig, ProductionConfig
 import sqlite3
+
+try:
+  from config import config, DevelopmentConfig, ProductionConfig
+except ModuleNotFoundError as e:
+  print('')
+  print('ERROR: You forgot to make a copy of the "config-example.py" file called "config.py"')
+  print('       Your application will NOT work until you do so.')
+  print('')
+
 """
 If you have another file in this directory and want to import it you must
 prefix the import statement with the directory 'app'.
