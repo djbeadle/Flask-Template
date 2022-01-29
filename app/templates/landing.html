@@ -2,4 +2,13 @@
 
 {% block content %}
 {{ content }}
+<br>
+<br>
+<ul>
+{% for thing in things %}
+<li>{{thing[0]}}: {{thing[1]}}, {{thing[2]}}</li>
+{% endfor %}
+</ul>
+<br>
+<a href="/create_thing">Create a new thing</a>
 {% endblock %}

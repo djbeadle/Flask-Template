@@ -22,6 +22,8 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    
+    DB_NAME = "myapp_dev.db"
 
     @classmethod
     def init_app(cls, app):
@@ -32,6 +34,8 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     DEBUG = True
 
+    DB_NAME = "myapp_test.db"
+
     @classmethod
     def init_app(cls, app):
         Config.init_app(app)
@@ -40,6 +44,8 @@ class TestingConfig(Config):
         
 class ProductionConfig(Config):
     DEBUG = False
+
+    DB_NAME = "myapp_prod.db"
 
     @classmethod
     def init_app(cls, app):
@@ -50,7 +56,7 @@ class ProductionConfig(Config):
 # This dictionary maps different environment names to the actual config classes.
 config = {
     'default': DevelopmentConfig,
-    'testing': TestingConfig,
     'development': DevelopmentConfig,
+    'testing': TestingConfig,
     'production': ProductionConfig
 }

@@ -42,8 +42,27 @@ def create_app(config_name):
     """
 
     app = Flask(__name__, static_url_path="/static")
-    print('this is the config name: {}'.format(config_name))
-    
+    print(f'The current config is "{config_name}"')
+
+    db = sqlite3.connect(config[config_name].DB_NAME)
+    cur = db.cursor()
+
+    try:
+      cur.executescript("""
+        CREATE TABLE IF NOT EXISTS things(
+          id INTEGER PRIMARY KEY,
+          title TEXT,
+          description TEXT,
+          status INTEGER DEFAULT 0
+        );
+      """)
+    except Exception as e:
+      print("Database creation error!")
+      print(e)
+      
+    from app.landing import landing_bp
+    app.register_blueprint(landing_bp)
+
     # Select the desired config object from FLASK_ENV environment variable
     try:
       app.config.from_object(config[config_name])
@@ -54,9 +73,5 @@ def create_app(config_name):
       print('variables FLASK_ENV=(development|production) and FLASK_APP=application.py')
       print('')
       raise e
-    
-
-    from app.landing import landing_bp
-    app.register_blueprint(landing_bp)
 
     return app

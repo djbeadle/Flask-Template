@@ -1,3 +1,6 @@
+# Ignore SQLite databases
+*.db
+
 # Config file with keys
 config.py
 
