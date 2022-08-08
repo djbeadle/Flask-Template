@@ -3,13 +3,13 @@ Prerequisites Python3 and Pip [(install guide)](https://docs.python-guide.org/de
 
 1. Clone the repository
 
-2. Navigate to the repository's top level (the level with 'README.md', 'requirements.txt', the folder 'app', etc)
+2. Navigate to the repository's top level (the level with `README.md`, `requirements.txt`, the folder `app`, etc)
 
 3. Create a virtual environment with python 3 and enter it [(guide here)](https://docs.python-guide.org/dev/virtualenvs/#basic-usage)
 
 4. Install the required python packages from requirements.txt [(guide here)](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
 
-5. Create a copy of 'config-example.py' in the same directory called 'config.py' and fill it in with your secrets. 'config.py' already has an entry in '.gitignore'
+5. Create a copy of `config-example.py` in the same directory called `config.py` and fill it in with your secrets. `config.py` already has an entry in `.gitignore`
 
 6. Set the Flask environment variables
 
