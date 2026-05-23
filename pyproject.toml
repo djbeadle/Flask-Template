@@ -1,0 +1,11 @@
+[project]
+name = "flask-template"
+version = "0.2.0"
+description = "Daniel Beadle's Flask template featuring Flask, Flask Migrate, and SQLAlchemy"
+readme = "README.md"
+requires-python = ">=3.12.0"
+dependencies = [
+    "flask~=3.1.0",
+    "flask-migrate>=4.1.0",
+    "flask-sqlalchemy>=3.1.1",
+]
