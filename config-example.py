@@ -31,17 +31,6 @@ class DevelopmentConfig(Config):
 
         print('This is initalization for the development config.')
 
-class TestingConfig(Config):
-    DEBUG = True
-
-    DB_NAME = "myapp_test.db"
-
-    @classmethod
-    def init_app(cls, app):
-        Config.init_app(app)
-
-        print('This is initalization for the testing config.')
-        
 class ProductionConfig(Config):
     DEBUG = False
 
@@ -55,8 +44,7 @@ class ProductionConfig(Config):
 
 # This dictionary maps different environment names to the actual config classes.
 config = {
-    'default': DevelopmentConfig,
+    'default': ProductionConfig,
     'development': DevelopmentConfig,
-    'testing': TestingConfig,
     'production': ProductionConfig
 }

@@ -13,26 +13,30 @@ Prerequisites Python3 and Pip [(install guide)](https://docs.python-guide.org/de
 
 6. Set the Flask environment variables
 
-Unix:
+## Unix, Unix-like, MacOS, etc:
 
 ~~~bash
-export FLASK_ENV=development
+export FLASK_DEBUG=yes
 export FLASK_APP=myapp
 ~~~
 
-Windows CMD:
+## Windows CMD:
 
 ~~~bash
-set FLASK_ENV=development
+set FLASK_DEBUG=yes
 set FLASK_APP=myapp
 ~~~
 
-Windows PowerShell:
+## Windows PowerShell:
 
 ~~~bash
-$env:FLASK_ENV='development'
+$env:FLASK_DEBUG='true'
 $env:FLASK_APP='myapp.py'
 ~~~
+
+## Visual Studio Code
+
+See `launch.json` and `settings.json`
 
 7. Run it!
 
@@ -70,10 +74,10 @@ Put it in **/app/__init__.py**
   
   Example variable values are as follows:
   
-  - PATH_TO_VIRTUALENV: **"/home/djbeadle/flask-template/venv/"**
-  - PATH_TO_PROJECT_HOME: **"/home/djbeadle/flask-template"**
+  - PATH_TO_VIRTUALENV: **"/home/daniel/flask-template/venv/"**
+  - PATH_TO_PROJECT_HOME: **"/home/daniel/flask-template"**
   - PATH: **"flask_template"**
-  - PATH_TO_CONF_WSGI: **"/home/djbeadle/Daniel-fugue-take-home/conf.wsgi"**
+  - PATH_TO_CONF_WSGI: **"/home/daniel/flask-template/conf.wsgi"**
   - PROCESS_GROUP_NAME: **"flask_template"**
 
 5. Restart Apache and see if it works!

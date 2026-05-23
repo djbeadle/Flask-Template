@@ -29,4 +29,4 @@ def update_info():
 @landing_bp.route('/create_thing', methods=['GET'])
 def create_thing_route():
     create_thing("Thing!", "This is another thing", 2)
-    return Response("New thing inserted in to the database.", 200)
+    return Response("New thing inserted in to the database.<br/><br/><a href='/'>Back</a>", 200)

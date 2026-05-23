@@ -8,6 +8,10 @@ def get_db():
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(current_app.config['DB_NAME'])
+        # Make the sqlite3 module return row objects for this database connection
+        # We can now query rows by column index or column name
+        # https://flask.palletsprojects.com/en/2.1.x/patterns/sqlite3/#easy-querying
+        db.row_factory = sqlite3.Row
     return db
 
 def create_thing(thing, description, status):

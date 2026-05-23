@@ -8,7 +8,8 @@ import os
 from app import create_app
 
 print('Firing things up')
-print(os.getenv("FLASK_ENV"))
-app = create_app(os.getenv('FLASK_ENV') or 'production')
+
+app = create_app("development" if os.getenv('FLASK_DEBUG') else "production")
+
 app.jinja_env.lstrip_blocks = True
 app.jinja_env.trim_blocks = True
